@@ -33,11 +33,11 @@ void push_(stack_t **head, unsigned int n)
 }
 
 /**
- * pall - displays all elements of stack
+ * pull - displays all elements of stack
  * @head: The stack to be displayed
  * @n: Line number
  */
-void pall(stack_t **head, unsigned int n)
+void pull(stack_t **head, unsigned int n)
 {
 	stack_t *cp;
 

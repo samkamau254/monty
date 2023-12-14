@@ -68,7 +68,7 @@ void _free(void);
 void _start(FILE *file);
 void parse_byte_code( int argc, char *argv[]);
 void push_(stack_t **head, unsigned int n);
-void pall(stack_t **head, unsigned int n);
+void pull(stack_t **head, unsigned int n);
 stack_t *adddnode_int(stack_t **head, const int n);
 stack_t *adddnode_int_end(stack_t **head, const int n);
 ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
