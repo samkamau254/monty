@@ -33,7 +33,7 @@ void push_(stack_t **head, unsigned int n)
 }
 
 /**
- * pull - displays all elements of stack
+ * pall - displays all elements of stack
  * @head: The stack to be displayed
  * @n: Line number
  */
