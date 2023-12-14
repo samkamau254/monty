@@ -14,7 +14,7 @@ void pops(stack_t **head, unsigned int n)
 	if (head == NULL || *head == NULL)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", n);
-		free();
+		_free();
 		exit(EXIT_FAILURE);
 	}
 	temp = *head;
@@ -42,7 +42,7 @@ void swaps(stack_t **head, unsigned int n)
 	if (i < 2)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", n);
-		free();
+		_free();
 		exit(EXIT_FAILURE);
 	}
 	temp = *head;
@@ -73,7 +73,7 @@ void adds(stack_t **head, unsigned int n)
 	if (i < 2)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", n);
-		free();
+		_free();
 		exit(EXIT_FAILURE);
 	}
 
@@ -114,7 +114,7 @@ void subtr(stack_t **head, unsigned int n)
 	if (i < 2)
 	{
 		fprintf(stderr, "L%u: can't sub, stack too short\n", n);
-		free();
+		_free();
 		exit(EXIT_FAILURE);
 	}
 

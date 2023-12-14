@@ -1,3 +1,5 @@
+#ifndef _MONTY_H
+#define _MONTY_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -62,7 +64,7 @@ extern gl_t globals;
 
 
 void _freedlistint(stack_t *head);
-void free(void);
+void _free(void);
 void _start(FILE *file);
 void parse_byte_code( int argc, char *argv[]);
 void push_(stack_t **head, unsigned int n);
@@ -77,7 +79,7 @@ void pops(stack_t **head, unsigned int n);
 void adds(stack_t **head, unsigned int n);
 void no(stack_t **head, unsigned int n);
 void subtr(stack_t **head, unsigned int n);
-void divide(stack_t **head, unigned int n);
+void divide(stack_t **head, unsigned int n);
 void multipy( stack_t **head, unsigned int n);
 void modif(stack_t **head, unsigned int n);
 

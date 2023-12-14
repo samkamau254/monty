@@ -1,0 +1,106 @@
+#include "monty.h"
+
+/**
+ * divide - divides the second top element of the stack by the top
+ * element of the stack
+ * @head: Pointer to the head
+ * @n: The line number;
+ */
+void divide(stack_t **head, unsigned int n)
+{
+	stack_t *temp = NULL;
+	int i = 0;
+
+	temp = *head;
+
+	while (temp != NULL)
+	{
+		temp = temp->next;
+		i++;
+	}
+	if (i < 2)
+	{
+		fprintf(stderr, "L%u: can't div, stack too short\n", n);
+		_free();
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*head)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", n);
+		_free();
+		exit(EXIT_FAILURE);
+	}
+
+	temp = (*head)->next;
+	temp->n /= (*head)->n;
+	pops(head, n);
+}
+
+/**
+ * multipy - multiplies the second top element of the stack with
+ * the top element of the stack
+ * @head: Pointer to the head
+ * @n: The line number;
+ */
+void multipy(stack_t **head, unsigned int n)
+{
+	stack_t *temp = NULL;
+	int i = 0;
+
+	temp = *head;
+
+	while (temp != NULL)
+	{
+		temp = temp->next;
+		i++;
+	}
+	if (i < 2)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", n);
+		_free();
+		exit(EXIT_FAILURE);
+	}
+
+	temp = (*head)->next;
+	temp->n *= (*head)->n;
+	pops(head, n);
+}
+
+/**
+ * modif - computes the rest of the division of the second top
+ * element of the stack by the top element of the stack.
+ * @head: Pointer to the head
+ * @n: The line number;
+ */
+void modif(stack_t **head, unsigned int n)
+{
+	stack_t *temp = NULL;
+	int i = 0;
+
+	temp = *head;
+
+	while (temp != NULL)
+	{
+		temp = temp->next;
+		i++;
+	}
+
+	if (i < 2)
+	{
+		fprintf(stderr, "L%u: can't mod, stack too short\n", n);
+		_free();
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*head)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", n);
+		_free();
+		exit(EXIT_FAILURE);
+	}
+
+	temp = (*head)->next;
+	temp->n %= (*head)->n;
+	pops(head, n);
+}
